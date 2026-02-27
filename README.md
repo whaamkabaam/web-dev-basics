@@ -1,4 +1,4 @@
-# Web Dev Project
+# Web Dev Basics University Project
 
 ## This is a project to complete the module Web Technologies Basics
 
