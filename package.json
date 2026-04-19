@@ -1,0 +1,24 @@
+{
+  "name": "web-basics",
+  "version": "1.0.0",
+  "description": "This Web App is supposed to be a 15 Minute Timeframe Tracking Tool, in which I can easily track my day in 15-Minute frames.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whaamkabaam/web-dev-basics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/whaamkabaam/web-dev-basics/issues"
+  },
+  "homepage": "https://github.com/whaamkabaam/web-dev-basics#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
