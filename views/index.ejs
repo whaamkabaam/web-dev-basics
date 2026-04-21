@@ -7,13 +7,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/tracker">Tracker</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
-    </nav>
+    <%- include('partials/nav') %>
 
     <main>
         <header>
@@ -39,8 +33,6 @@
         </section>
     </main>
 
-    <footer>
-        <p>TimeBlock - Web Technologies Basics Project</p>
-    </footer>
+    <%- include('partials/footer') %>
 </body>
 </html>
