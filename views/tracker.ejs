@@ -11,7 +11,13 @@
 
     <main>
         <h1>Daily Tracker</h1>
-        <p>Tuesday, February 24, 2026</p>
+
+        <form method="POST" action="/tracker">
+            <input type="text" name="time" placeholder="08:00" required>
+            <input type="text" name="activity" placeholder="Activity" required>
+            <input type="text" name="project" placeholder="Project">
+            <button type="submit">Add block</button>
+        </form>
 
         <table>
             <thead>
@@ -22,66 +28,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>08:00</td>
-                    <td>Morning planning</td>
-                    <td>General</td>
-                </tr>
-                <tr>
-                    <td>08:15</td>
-                    <td>Morning planning</td>
-                    <td>General</td>
-                </tr>
-                <tr>
-                    <td>08:30</td>
-                    <td>Reading documentation</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>08:45</td>
-                    <td>Reading documentation</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>09:00</td>
-                    <td>Writing HTML</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>09:15</td>
-                    <td>Writing HTML</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>09:30</td>
-                    <td>Writing HTML</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>09:45</td>
-                    <td>Coffee break</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>10:00</td>
-                    <td>Writing CSS</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>10:15</td>
-                    <td>Writing CSS</td>
-                    <td>Web Basics</td>
-                </tr>
-                <tr>
-                    <td>10:30</td>
-                    <td>Team meeting</td>
-                    <td>General</td>
-                </tr>
-                <tr>
-                    <td>10:45</td>
-                    <td>Team meeting</td>
-                    <td>General</td>
-                </tr>
+                <% blocks.forEach(function(block) { %>
+                    <tr>
+                        <td><%= block.time %></td>
+                        <td><%= block.activity %></td>
+                        <td><%= block.project %></td>
+                    </tr>
+                <% }); %>
             </tbody>
         </table>
     </main>
