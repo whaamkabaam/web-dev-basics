@@ -5,5 +5,6 @@ buttons.forEach((button) => {
     if (!confirm('Delete this block?')) return;
     const id = e.currentTarget.dataset.id;
     await fetch('/tracker/' + id, { method: 'DELETE' });
+    e.currentTarget.closest('tr').remove();
   });
 });
