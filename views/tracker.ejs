@@ -25,6 +25,7 @@
                     <th>Time</th>
                     <th>Activity</th>
                     <th>Project</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                         <td><%= block.time %></td>
                         <td><%= block.activity %></td>
                         <td><%= block.project %></td>
+                        <td><button class="delete-btn" data-id="<%= block._id %>">Delete</button></td>
                     </tr>
                 <% }); %>
             </tbody>
