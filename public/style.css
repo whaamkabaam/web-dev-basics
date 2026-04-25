@@ -80,6 +80,19 @@ tbody tr:nth-child(even) {
     background-color: #f0f0f0;
 }
 
+.delete-btn {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background-color: #962d22;
+}
+
 /* footer */
 footer {
     text-align: center;
