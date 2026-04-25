@@ -36,6 +36,11 @@ app.post('/tracker', async (req, res) => {
   res.redirect('/tracker');
 });
 
+app.delete('/tracker/:id', async (req, res) => {
+  await Block.findByIdAndDelete(req.params.id);
+  res.sendStatus(204);
+});
+
 app.get('/about', (req, res) => {
   res.render('about');
 });
