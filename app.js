@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const trackerRoutes = require('./routes/tracker');
+const pageRoutes = require('./routes/pages');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -14,14 +15,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', trackerRoutes);
-
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
-app.get('/about', (req, res) => {
-  res.render('about');
-});
+app.use('/', pageRoutes);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
