@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const Block = require('./models/block');
+const trackerRoutes = require('./routes/tracker');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -13,26 +13,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/', trackerRoutes);
+
 app.get('/', (req, res) => {
   res.render('index');
-});
-
-app.get('/tracker', async (req, res) => {
-  const blocks = await Block.find();
-  res.render('tracker', { blocks });
-});
-
-app.post('/tracker', async (req, res) => {
-  const time = req.body.time;
-  const activity = req.body.activity;
-  const project = req.body.project;
-  await Block.create({ time, activity, project });
-  res.redirect('/tracker');
-});
-
-app.delete('/tracker/:id', async (req, res) => {
-  await Block.findByIdAndDelete(req.params.id);
-  res.sendStatus(204);
 });
 
 app.get('/about', (req, res) => {
