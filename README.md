@@ -34,13 +34,13 @@ There are a few small unit tests for the Block model.
 
 ## Project structure
 
-app.js - boot, middleware, mounts the routers
-models/block.js - Mongoose schema for a 15-min block
-routes/tracker.js - GET, POST, DELETE for /tracker
-routes/pages.js - GET / and /about
-views/ - EJS templates + partials
-public/ - style.css and main.js (client-side delete)
-tests/ - node:test unit tests
+- app.js - boot, middleware, mounts the routers
+- models/block.js - Mongoose schema for a 15-min block
+- routes/tracker.js - GET, POST, DELETE for /tracker
+- routes/pages.js - GET / and /about
+- views/ - EJS templates + partials
+- public/ - style.css and main.js (client-side delete)
+- tests/ - node:test unit tests
 
 
 ## What's not in scope
