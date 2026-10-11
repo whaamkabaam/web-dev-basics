@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TimeBlock - Edit Block</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <main>
+        <h1>Edit Block</h1>
+
+        <form method="POST" action="/tracker/<%= block._id %>/edit">
+            <input type="text" name="time" value="<%= block.time %>" required>
+            <input type="text" name="activity" value="<%= block.activity %>" required>
+            <input type="text" name="project" value="<%= block.project %>">
+            <button type="submit">Save</button>
+            <a href="/tracker">Cancel</a>
+        </form>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

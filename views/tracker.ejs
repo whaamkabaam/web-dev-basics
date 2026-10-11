@@ -35,7 +35,10 @@
                         <td><%= block.time %></td>
                         <td><%= block.activity %></td>
                         <td><%= block.project %></td>
-                        <td><button class="delete-btn" data-id="<%= block._id %>">Delete</button></td>
+                        <td>
+                            <a href="/tracker/<%= block._id %>/edit">Edit</a>
+                            <button class="delete-btn" data-id="<%= block._id %>">Delete</button>
+                        </td>
                     </tr>
                 <% }); %>
             </tbody>
