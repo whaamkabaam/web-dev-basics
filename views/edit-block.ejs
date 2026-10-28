@@ -12,10 +12,19 @@
     <main>
         <h1>Edit Block</h1>
 
-        <form method="POST" action="/tracker/<%= block._id %>/edit">
-            <input type="text" name="time" value="<%= block.time %>" required>
-            <input type="text" name="activity" value="<%= block.activity %>" required>
-            <input type="text" name="project" value="<%= block.project %>">
+        <form class="block-form edit-form" method="POST" action="/tracker/<%= block._id %>/edit">
+            <label>
+                Time
+                <input type="text" name="time" value="<%= block.time %>" required>
+            </label>
+            <label>
+                Activity
+                <input type="text" name="activity" value="<%= block.activity %>" required>
+            </label>
+            <label>
+                Project (optional)
+                <input type="text" name="project" value="<%= block.project %>">
+            </label>
             <button type="submit">Save</button>
             <a href="/tracker">Cancel</a>
         </form>

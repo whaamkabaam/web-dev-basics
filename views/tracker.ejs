@@ -13,10 +13,19 @@
     <main>
         <h1>Daily Tracker</h1>
 
-        <form method="POST" action="/tracker">
-            <input type="text" name="time" placeholder="08:00" required>
-            <input type="text" name="activity" placeholder="Activity" required>
-            <input type="text" name="project" placeholder="Project">
+        <form class="block-form add-form" method="POST" action="/tracker">
+            <label>
+                Time
+                <input type="text" name="time" placeholder="08:00" required>
+            </label>
+            <label>
+                Activity
+                <input type="text" name="activity" required>
+            </label>
+            <label>
+                Project (optional)
+                <input type="text" name="project">
+            </label>
             <button type="submit">Add block</button>
         </form>
 
@@ -36,7 +45,7 @@
                         <td><%= block.activity %></td>
                         <td><%= block.project %></td>
                         <td>
-                            <a href="/tracker/<%= block._id %>/edit">Edit</a>
+                            <a class="edit-link" href="/tracker/<%= block._id %>/edit">Edit</a>
                             <button class="delete-btn" data-id="<%= block._id %>">Delete</button>
                         </td>
                     </tr>
