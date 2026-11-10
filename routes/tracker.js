@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/tracker', async (req, res) => {
   try {
-    const blocks = await Block.find();
+    const blocks = await Block.find().sort({ time: 1 });
     res.render('tracker', { blocks });
   } catch (err) {
     console.log(err);
