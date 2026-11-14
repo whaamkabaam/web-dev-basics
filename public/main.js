@@ -13,3 +13,11 @@ buttons.forEach((button) => {
     }
   });
 });
+
+const resetForm = document.querySelector('.reset-form');
+
+resetForm.addEventListener('submit', (e) => {
+  if (!confirm('Delete all blocks?')) {
+    e.preventDefault();
+  }
+});

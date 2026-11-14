@@ -143,7 +143,8 @@ th {
     margin-right: 10px;
 }
 
-.delete-btn {
+.delete-btn,
+.reset-btn {
     background-color: #fff6f5;
     color: #922d26;
     border: 1px solid #e3c1be;
@@ -152,8 +153,14 @@ th {
     border-radius: 5px;
 }
 
-.delete-btn:hover {
+.delete-btn:hover,
+.reset-btn:hover {
     background-color: #fbe7e5;
+}
+
+.reset-form {
+    margin-top: 15px;
+    text-align: right;
 }
 
 /* footer */

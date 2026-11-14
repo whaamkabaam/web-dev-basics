@@ -26,6 +26,16 @@ router.post('/tracker', async (req, res) => {
   }
 });
 
+router.post('/tracker/reset', async (req, res) => {
+  try {
+    await Block.deleteMany({});
+    res.redirect('/tracker');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Could not reset the day. Try again later.');
+  }
+});
+
 router.get('/tracker/:id/edit', async (req, res) => {
   try {
     const block = await Block.findById(req.params.id);
