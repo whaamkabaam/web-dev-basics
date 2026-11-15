@@ -33,7 +33,7 @@ Live at: https://web-dev-basics-vbnm.onrender.com
 
 npm test
 
-There are a few small unit tests for the Block model.
+There are a few small tests for the Block model and the tracker routes (the database is mocked, so no connection needed).
 
 ## Project structure
 

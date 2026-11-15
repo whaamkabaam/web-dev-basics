@@ -49,3 +49,21 @@ test('edit saves the new values and goes back to the tracker', async (t) => {
   assert.strictEqual(savedId, 'abc123');
   assert.deepStrictEqual(savedData, { time: '09:15', activity: 'coding', project: 'web basics' });
 });
+
+test('edit page sends 404 if the block does not exist', async (t) => {
+  t.mock.method(Block, 'findById', async () => null);
+
+  const res = await fetch(url + '/tracker/abc123/edit');
+  assert.strictEqual(res.status, 404);
+});
+
+test('reset day deletes all blocks', async (t) => {
+  let filter;
+  t.mock.method(Block, 'deleteMany', async (f) => {
+    filter = f;
+  });
+
+  const res = await fetch(url + '/tracker/reset', { method: 'POST', redirect: 'manual' });
+  assert.strictEqual(res.status, 302);
+  assert.deepStrictEqual(filter, {});
+});
