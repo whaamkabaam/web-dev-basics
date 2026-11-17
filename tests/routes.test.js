@@ -67,3 +67,27 @@ test('reset day deletes all blocks', async (t) => {
   assert.strictEqual(res.status, 302);
   assert.deepStrictEqual(filter, {});
 });
+
+test('add does not save a time like 8:30', async (t) => {
+  const create = t.mock.method(Block, 'create', async () => {});
+
+  const res = await fetch(url + '/tracker', {
+    method: 'POST',
+    body: new URLSearchParams({ time: '8:30', activity: 'reading', project: '' }),
+    redirect: 'manual'
+  });
+  assert.strictEqual(res.status, 400);
+  assert.strictEqual(create.mock.callCount(), 0);
+});
+
+test('edit does not save a time that is not a time', async (t) => {
+  const update = t.mock.method(Block, 'findByIdAndUpdate', async () => {});
+
+  const res = await fetch(url + '/tracker/abc123/edit', {
+    method: 'POST',
+    body: new URLSearchParams({ time: 'morning', activity: 'coding', project: '' }),
+    redirect: 'manual'
+  });
+  assert.strictEqual(res.status, 400);
+  assert.strictEqual(update.mock.callCount(), 0);
+});
